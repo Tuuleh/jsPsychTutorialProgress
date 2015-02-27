@@ -7,7 +7,7 @@ var express = require('express'),
 var app = express();
 
 // --- MONGOOSE SETUP
-mongoose.connect('mongodb://localhost/jspsych'); 
+mongoose.connect(process.env.CONNECTION); 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', function callback() {
